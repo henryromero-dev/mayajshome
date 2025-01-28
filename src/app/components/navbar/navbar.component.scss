@@ -1,0 +1,9 @@
+.search {
+    width: 220px;
+}
+.navbar {
+    z-index: 1000;
+    &__content {
+        width: 1200px;
+    }
+}

@@ -1,0 +1,29 @@
+.pagination--standard {
+    ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li{
+            width: 34px;
+            height: 34px;
+            display: flex;
+            place-content: center;
+            place-items: center;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 0 4px;
+            transition: 0.35s ease all;
+        }
+        .-item {
+            &.active {
+                background: $darkgrey !important;
+                color: $background !important;
+                box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.25);
+            }
+            &:hover {
+                background: $accent;
+            }
+        }
+    }
+}

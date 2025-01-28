@@ -1,0 +1,66 @@
+<section class="events-module">
+    <header class="mb-5">
+        <h1 class="text-3xl font-bold">
+            Events (Custom Client-Defined)
+        </h1>
+        <p class="text-lg mt-2">
+            <strong>Purpose:</strong> The Events module allows clients to define custom events using code, tailored to their unique needs.  
+            <br><strong>Why It's Important:</strong> Events can serve various purposes, from managing guest lists to automating job tasks. The flexibility to define events empowers clients to adapt the platform to their workflows.
+        </p>
+    </header>
+
+    <section class="event-types mb-8">
+        <h2 class="text-2xl font-semibold">
+            Event Types:
+        </h2>
+        <ul class="list-disc list-inside mt-3 text-base">
+            <li><strong>Guest:</strong> Events designed for managing attendees, such as RSVP or guest lists.</li>
+            <li><strong>Private:</strong> Restricted events with limited access, only could be triggered with an access token.</li>
+            <li><strong>System:</strong> Restricted events that requires access token and give access to system level operations.</li>
+            <li><strong>Job:</strong> Events triggered by specific backend operations or workflows, such as scheduled tasks.</li>
+        </ul>
+    </section>
+
+    <section class="key-components mb-8">
+        <h2 class="text-2xl font-semibold">
+            Key Components:
+        </h2>
+        <ul class="list-unstyled mt-3 text-base">
+            <li>
+                <strong>Event Name:</strong> Custom logic written by the client to define how the event behaves. The code can include triggers, conditions, and actions.
+            </li>
+            <li>
+                <strong>Event Type:</strong> One of the predefined types ("Guest", "Private", "System", "Job") that determines the context and visibility of the event.
+            </li>
+            <li>
+                <strong>Parameters:</strong> Data or parameters passed to the event for execution, such as user details, timestamps, or configuration settings.
+            </li>
+        </ul>
+    </section>
+
+    <section class="example mb-8">
+        <h2 class="text-2xl font-semibold">
+            Example
+        </h2>
+        <p class="mt-3 mb-2">
+            Trigger a Guest Event for Managing Invitations:
+        </p>
+        <div class="bg-gray-900 text-white rounded-lg overflow-hidden p-4">
+            <ngx-monaco-editor style="height: 300px;" [options]="{
+                theme: 'vs-dark', 
+                language: 'json',
+                wordWrap: 'on'
+            }" [(ngModel)]="events"></ngx-monaco-editor>
+        </div>
+    </section>
+
+    <section class="try-it-yourself">
+        <h2 class="text-2xl font-semibold">
+            Try It Yourself
+        </h2>
+        <p class="mt-3">
+            Use the interactive interface below to define and test your custom events.
+        </p>
+        <div id="swagger-ui-item" class="w-100 mt-4"></div>
+    </section>
+</section>

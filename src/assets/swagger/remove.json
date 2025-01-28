@@ -1,0 +1,70 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Inertia",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Api"
+        }
+    ],
+    "paths": {
+        "/api/remove/{objectName}": {
+            "post": {
+                "tags": [
+                    "Api"
+                ],
+                "summary": "Remove",
+                "description": "Remove rows from the database",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "schema": {
+                                        "name": [{
+                                            "op": "equals",
+                                            "val": "apples"
+                                        }]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "objectName",
+                        "in": "path",
+                        "description": "Name of the object",
+                        "required": true,
+                        "type": "string",
+                        "example": "product"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+<h1>
+    Storage (File Upload)
+</h1>
+
+<p>
+    <strong>Purpose:</strong> The Storage module allows you to upload files to a server, manage file storage, and associate uploaded files with specific records or models in your data.  
+    <br><strong>Why It's Important:</strong> Many applications require handling files, such as documents, images, or other media. The Storage module simplifies file management by providing a straightforward way to upload and organize your files.
+</p>
+
+<h2>
+    Key Components:
+</h2>
+
+<ul class="list-unstyled mb-5">
+    <li>
+        <strong>Schema:</strong> The top-level object defining the data model you're associating files with (optional).
+    </li>
+    <li>
+        <strong>Model Names (e.g., "user", "product"):</strong> Properties within the schema object can correspond to models that the files are linked to.
+    </li>
+    <li>
+        <strong>File Metadata:</strong> Additional information about the uploaded file, such as its name, type, or tags. This metadata can be included to help organize and retrieve files later.
+    </li>
+    <li>
+        <strong>Upload Endpoint:</strong> Specify the endpoint or path where files will be uploaded. This should support secure and scalable file storage.
+    </li>
+    <li>
+        <strong>File Associations:</strong> Optionally associate the uploaded file with a specific record or entity in your data by including identifiers like record IDs.
+    </li>
+</ul>
+
+<h2>
+    Try It Yourself
+</h2>
+
+<div class="w-100">
+    <div id="swagger-ui-item" class="w-100"></div>
+</div>

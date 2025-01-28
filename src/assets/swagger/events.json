@@ -1,0 +1,70 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Inertia",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Factory"
+        }
+    ],
+    "paths": {
+        "/factory/events/trigger/{tenantGuid}": {
+            "post": {
+                "tags": [
+                    "Ftp"
+                ],
+                "summary": "Trigger Event",
+                "description": "Trigger an event",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {   
+                                "type": "object",
+                                "example": {
+                                    "type": "guess",
+                                    "eventName": "get-products",
+                                    "params":
+                                    {
+                                        "status": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tenantGuid",
+                        "in": "path",
+                        "description": "Guid of the tenant",
+                        "required": true,
+                        "type": "guid",
+                        "example": "482b6f4b-3b3b-4b3b-8b3b"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

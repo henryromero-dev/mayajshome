@@ -1,0 +1,191 @@
+@use "@angular/material" as mat;
+@use 'sass:map';
+@include mat.core();
+
+
+$md-primary: (
+    50: var(--theme_primary_500),
+    contrast: (
+        50: var(--theme_primary_contrast_500)
+        )
+);
+
+$md-accent: (
+    50: var(--theme_accent_500),
+    contrast: (
+        50: var(--theme_accent_contrast_500)
+        )
+);
+
+$md-secondary: (
+    50: var(--theme_secondary_500),
+    contrast: (
+        50: var(--theme_secondary_contrast_500)
+        )
+);
+
+$md-help: (
+    50: var(--theme_help_500),
+    contrast: (
+        50: var(--theme_help_contrast_500)
+        )
+);
+
+$md-success: (
+    50: var(--theme_success_500),
+    contrast: (
+        50: var(--theme_success_contrast_500)
+        )
+);
+
+$md-darkgrey: (
+    50: var(--theme_darkgrey_500),
+    contrast: (
+        50: var(--theme_darkgrey_contrast_500)
+        )
+);
+
+$md-alternative: (
+    50: var(--theme_alternative_500),
+    contrast: (
+        50: var(--theme_alternative_contrast_500)
+        )
+);
+
+$app-primary: mat.m2-define-palette($md-primary);
+$app-accent: mat.m2-define-palette($md-accent);
+$app-secondary: mat.m2-define-palette($md-secondary);
+$app-help: mat.m2-define-palette($md-help);
+$app-success: mat.m2-define-palette($md-success);
+$app-darkgrey: mat.m2-define-palette($md-darkgrey);
+$app-alternative: mat.m2-define-palette($md-alternative);
+$app-warn: mat.m2-define-palette(mat.$red-palette);
+$app-typography: mat.m2-define-typography-config(
+  $font-family: var(--theme_font_family)
+);
+/*
+$my-theme: mat.m2-define-light-theme((color: (primary: $app-primary, accent: $app-accent, warn: $app-warn), typography: $app-typography, density: 0));
+$my-theme: map.deep-merge($my-theme, (secondary: $app-secondary, help: $app-help, success: $app-success, darkgrey: $app-darkgrey, alternative: $app-alternative, color:(secondary: $app-secondary, help: $app-help, success: $app-success, darkgrey: $app-darkgrey, alternative: $app-alternative)));
+
+@include mat.m2-all-component-themes($my-theme);
+@include mat-core($app-typography);*/
+
+.mat-secondary {
+    background-color: var(--theme_secondary_500);
+    color: var(--theme_secondary_contrast_500);
+}
+
+.mat-help {
+    background-color: var(--theme_help_500);
+    color: var(--theme_help_contrast_500);
+}
+
+.mat-success {
+    background-color: var(--theme_success_500);
+    color: var(--theme_success_contrast_500);
+}
+
+.mat-darkgrey {
+    background-color: var(--theme_darkgrey_500);
+    color: var(--theme_darkgrey_contrast_500);
+}
+
+.mat-alternative {
+    background-color: var(--theme_alternative_500);
+    color: var(--theme_alternative_contrast_500);
+}
+
+
+span[color="primary"],
+.active[color="primary"] {
+    color: var(--theme_primary_500)
+    path {
+        fill: var(--theme_primary_500)
+    }
+}
+
+span[color="accent"],
+.active[color="accent"] {
+    color: var(--theme_accent_500)
+    path {
+        fill: var(--theme_accent_500)
+    }
+}
+
+span[color="secondary"],
+.active[color="secondary"] {
+    color: var(--theme_secondary_500)
+    path {
+        fill: var(--theme_secondary_500)
+    }
+}
+
+span[color="help"],
+.active[color="help"] {
+    color: var(--theme_help_500)
+    path {
+        fill: var(--theme_help_500)
+    }
+}
+
+span[color="success"],
+.active[color="success"] {
+    color: var(--theme_success_500)
+    path {
+        fill: var(--theme_success_500)
+    }
+}
+
+span[color="darkgrey"],
+.active[color="darkgrey"] {
+    color: var(--theme_darkgrey_500)
+    path {
+        fill: var(--theme_darkgrey_500)
+    }
+}
+
+.mat-typography,
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--theme_font_family) !important;
+}
+
+.snackbar {
+    &-notification-success {
+        background-color: var(--theme_success_500);
+        color: var(--theme_success_contrast_500);
+        button {
+            color: var(--theme_success_contrast_500);
+        }
+    }
+    &-notification-danger {
+        background-color: var(--theme_danger_500);
+        color: var(--theme_danger_contrast_500);
+        button {
+            color: var(--theme_danger_contrast_500);
+        }
+    }
+    &-bottom-right {
+        position: absolute;
+        margin: 0 !important;
+        right: 25px;
+        bottom: 60px;
+    }
+    &-bottom-left {
+        position: absolute;
+        margin: 0 !important;
+        left: 25px;
+        bottom: 60px;
+    }
+    &-top-right {
+        position: absolute;
+        margin: 0 !important;
+        right: 25px;
+        top: 60px;
+    }
+    &-top-left {
+        position: absolute;
+        margin: 0 !important;
+        left: 25px;
+        top: 60px;
+    }
+}

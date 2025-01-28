@@ -1,0 +1,76 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Inertia",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Api"
+        }
+    ],
+    "paths": {
+        "/ftp/upload/api/{recordGuid}/{objectName}/{propertyName}": {
+            "post": {
+                "tags": [
+                    "Ftp"
+                ],
+                "summary": "Upload",
+                "description": "Upload files to the FTP server",
+                "parameters": [
+                    {
+                        "name": "File",
+                        "in": "formData",
+                        "schema": {
+                            "type": "file"
+                        }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "recordGuid",
+                        "in": "path",
+                        "description": "Guid of the record",
+                        "required": true,
+                        "type": "guid",
+                        "example": "482b6f4b-3b3b-4b3b-8b3b"
+                    },
+                    {
+                        "name": "objectName",
+                        "in": "path",
+                        "description": "Name of the object",
+                        "required": true,
+                        "type": "string",
+                        "example": "product"
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "Name of the property",
+                        "required": true,
+                        "type": "string",
+                        "example": "logo"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

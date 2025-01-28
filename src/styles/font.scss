@@ -1,0 +1,202 @@
+@media (min-width: 768px) {
+    .text--heading01 {
+        font-size: 40px !important;
+        line-height: 48px !important;
+    }
+    .text--heading02 {
+        font-size: 36px !important;
+        line-height: 36px !important;
+    }
+    .text--heading03 {
+        font-size: 28px !important;
+        line-height: 32px !important;
+    }
+    .text--heading04 {
+        font-size: 20px !important;
+        line-height: 24px !important;
+    }
+    .text--desktop01 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .text--desktop02 {
+        font-size: 16px;
+        line-height: 19px;
+    }
+    .text--desktop02-i {
+        font-size: 16px !important;
+        line-height: 19px !important;
+    }
+    .text--desktop03 {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .text--desktop03-i {
+        font-size: 14px !important;
+        line-height: 16px;
+    }
+    .text--desktop04 {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .text--desktop04-i {
+        font-size: 12px !important;
+        line-height: 14px;
+    }
+    .text--desktop05 {
+        font-size: 11px;
+        line-height: 12px;
+    }
+    .text--f30-l36 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+    .text--f24--l28 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .text--f36--l40 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .text--heading01 {
+        font-size: 30px;
+        line-height: 32px;
+    }
+    .text--heading02 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .text--heading03 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .text--heading04 {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .text--mobile01 {
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .text--mobile02 {
+        font-size: 14px;
+        line-height: 12px;
+    }
+    .text--mobile03 {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .text--mobile04 {
+        font-size: 10px;
+        line-height: 10px;
+    }
+    .text--f30-l36 {
+        font-size: 22px;
+        line-height: 24px;
+    }
+}
+
+.extrabold {
+    font-weight: 800 !important;
+}
+
+.bold {
+    font-weight: 700 !important;
+}
+
+.semibold {
+    font-weight: 600 !important;
+}
+
+.medium {
+    font-weight: 500 !important;
+}
+
+.regular {
+    font-weight: 400 !important;
+}
+
+.light {
+    font-weight: 300 !important;
+}
+
+.text--primary {
+    color: $primaryColor;
+}
+
+.text--secondary {
+    color: $secondaryColor;
+}
+
+.text--accent {
+    color: $accent;
+}
+
+.text--white {
+    color: $white;
+}
+
+.text--white-i {
+    color: $white !important;
+}
+
+.text--black {
+    color: $black;
+}
+
+.text--blue {
+    color: $blue;
+}
+
+.text--disabled {
+    color: $disabled;
+}
+
+.text--danger {
+    color: $danger;
+}
+
+.text--success {
+    color: $success;
+}
+
+.text--darkgrey {
+    color: $darkgrey;
+}
+
+.text--grey {
+    color: $grey;
+}
+
+.text--lightgrey {
+    color: $lightgrey;
+}
+
+.text--lightgrey02 {
+    color: rgb(158 170 185);
+}
+
+.mat-icon {
+    &.x18 {
+        width: 18px;
+        height: 18px;
+        font-size: 18px;
+    }
+}
+
+.mat-focused .mat-form-field-label,
+.mat-form-field-label:not(.mat-empty):not(.mat-form-field-empty) {
+    @extend .text--desktop03;
+    width: auto !important;
+    background-color: white;
+    transform: translateY(-1.85em) scale(1) !important;
+    padding-right: 4px;
+}
+
+.mat-form-field-label {
+    @extend .text--darkgrey;
+}

@@ -1,0 +1,72 @@
+input.textfield--standard {
+    border: 1px solid $borderColor;
+    border-radius: 10px;
+    color: $black;
+    outline: 0;
+    &::placeholder {
+        color: $borderColor;
+    }
+    &:focus {
+        outline: none;
+        border-color: $darkgrey;
+    }
+    &:disabled {
+        background-color: $disabled;
+        border-color: $disabled;
+        color: $grey;
+    }
+    &.textfield--error {
+        border-color: $danger;
+    }
+    &.textfield--success {
+        border-color: $success;
+    }
+    &.textfield--disabled {
+        background-color: $disabled;
+        border-color: $disabled;
+        color: $grey;
+    }
+    &.textfield--iconleft {
+        padding-left: 0;
+        padding-right: 20px;
+        svg {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    &.textfield--iconright {
+        padding-left: 20px;
+        padding-right: 0;
+        svg {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    &.textfield--labelonly {
+        padding-left: 0;
+        padding-right: 0;
+        svg {
+            display: none;
+        }
+    }
+    &.textfield--icononly {
+        padding-left: 0;
+        padding-right: 0;
+        span {
+            display: none;
+        }
+    }
+    &.textfield--circular {
+        border-radius: 100%;
+    }
+}
+
+.mat-select__standard {
+    .mat-form-field-infix {
+        padding: 8px 0 16px !important;
+    }
+}

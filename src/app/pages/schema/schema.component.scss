@@ -1,0 +1,27 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/font.scss';
+
+:host {
+    width: 100%;
+}
+
+h1 {
+    @extend .text--heading03;
+    @extend .text--darkgrey;
+    @extend .bold;
+    @extend .text--darkgrey;
+    margin-bottom: 32px;
+}
+h2 {
+    @extend .text--heading04;
+    @extend .text--darkgrey;
+    @extend .bold;
+    @extend .text--darkgrey;
+    margin-bottom: 16px;
+}
+p {
+    @extend .text--desktop02;
+    @extend .text--darkgrey;
+    margin-bottom: 48px;
+    line-height: 32px;
+}

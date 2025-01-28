@@ -1,0 +1,33 @@
+.home {
+    &__header {
+        background: linear-gradient(to right, #1f92d8, #6bb4e1);
+        height: 512px;
+        overflow: hidden;
+        &--content {
+            width: 1200px;
+        }
+    }
+    &__body {
+        &--content {
+            width: 1024px;
+        }
+    }
+}
+p {
+    line-height: 36px;
+}
+.necker {
+    position: absolute;
+    width: 1400px;
+    opacity: 0.1;
+    z-index: 0;
+    left: calc(50% - 700px);
+    top: -425px;
+}
+img {
+    z-index: 0;
+}
+
+code {
+    background: #3a3e4a;;
+}

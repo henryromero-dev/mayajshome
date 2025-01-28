@@ -1,0 +1,211 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@import './colors.scss';
+
+@include mat.core();
+
+$_palettes: (
+    primary: (0: #000000,
+        10: #331100,
+        20: #542100,
+        25: #662900,
+        30: #783200,
+        35: rgb(72, 146, 163),
+        40: rgb(72, 146, 163),
+        50: rgb(72, 146, 163),
+        60: rgb(72, 146, 163),
+        70: rgb(72, 146, 163),
+        80: #ffb690,
+        90: #ffdbca,
+        95: #ffede6,
+        98: #fff8f6,
+        99: #fffbff,
+        100: #ffffff,
+    ),
+    secondary: (0: #000000,
+        10: #001c39,
+        20: #00315d,
+        25: #003c70,
+        30: #004884,
+        35: #0078d7,
+        40: #0078d7,
+        50: #0078d7,
+        60: #0078d7,
+        70: #0078d7,
+        80: #a4c9ff,
+        90: #d4e3ff,
+        95: #ebf1ff,
+        98: #f8f9ff,
+        99: #fdfcff,
+        100: #ffffff,
+    ),
+    tertiary: (0: #000000,
+        10: #001b3f,
+        20: #002f66,
+        25: #003a7b,
+        30: #004590,
+        35: #0b50a3,
+        40: #225db0,
+        50: #4276cb,
+        60: #5e90e7,
+        70: #7dabff,
+        80: #abc7ff,
+        90: #d7e2ff,
+        95: #ecf0ff,
+        98: #f9f9ff,
+        99: #fdfbff,
+        100: #ffffff,
+    ),
+    accent: (0: #000000,
+        10: #001c39,
+        20: #00315d,
+        25: #003c70,
+        30: #004884,
+        35: #0078d7,
+        40: #0078d7,
+        50: #0078d7,
+        60: #0078d7,
+        70: #0078d7,
+        80: #a4c9ff,
+        90: #d4e3ff,
+        95: #ebf1ff,
+        98: #f8f9ff,
+        99: #fdfcff,
+        100: #ffffff,
+    ),
+    neutral: (0: #000000,
+        4: #000c0e,
+        6: #001316,
+        10: #001f24,
+        12: #002429,
+        17: #002f35,
+        20: #00363d,
+        22: #003b42,
+        24: #004047,
+        25: #00424a,
+        30: #004f58,
+        35: #005b66,
+        40: #006874,
+        50: #008391,
+        60: #00a0b0,
+        70: #22bccf,
+        80: #4fd8eb,
+        87: #81e9f9,
+        90: #97f0ff,
+        92: #aef3ff,
+        94: #c5f6ff,
+        95: #d0f8ff,
+        96: #daf9ff,
+        98: #edfcff,
+        99: #f0f0f0,
+        100: #ffffff,
+    ),
+    neutral-variant: (0: #000000,
+        10: #241913,
+        20: #3b2e27,
+        25: #463832,
+        30: #6d645f,
+        35: #6d645f,
+        40: #6d645f,
+        50: #85736b,
+        60: #a08d84,
+        70: #bba79e,
+        80: #d7c2b9,
+        90: #ededed,
+        95: #ededed,
+        98: #ededed,
+        99: #ededed,
+        100: #ffffff,
+    ),
+    error: (0: #000000,
+        10: #410002,
+        20: #690005,
+        25: #7e0007,
+        30: #93000a,
+        35: #a80710,
+        40: #ba1a1a,
+        50: #de3730,
+        60: #ff5449,
+        70: #ff897d,
+        80: #ffb4ab,
+        90: #ffdad6,
+        95: #ffedea,
+        98: #fff8f7,
+        99: #ededed,
+        100: #ffffff,
+    ),
+);
+
+$_rest: (
+    secondary: map.get($_palettes, secondary),
+    neutral: map.get($_palettes, neutral),
+    neutral-variant: map.get($_palettes, neutral-variant),
+    error: map.get($_palettes, error),
+);
+$_primary: map.merge(map.get($_palettes, primary), $_rest);
+$_secondary: map.merge(map.get($_palettes, secondary), $_rest);
+$_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
+$_accent: map.merge(map.get($_palettes, accent), $_rest);
+$_warn: map.merge(map.get($_palettes, error), $_rest);
+
+$light-theme: mat.define-theme((color: (theme-type: light,
+        primary: $_primary,
+        tertiary: $_tertiary,
+        use-system-variables: false,
+      ),
+      typography: (use-system-variables: true,
+      ),
+    ));
+
+body {
+    @include mat.all-component-themes($light-theme);
+}
+
+.mdc-dialog__surface {
+    border-radius: 8px !important;
+    padding: 24px !important;
+}
+
+.mat-mdc-option {
+    max-height: 24px !important;
+}
+
+.mat-mdc-select-panel {
+    background-color: white !important;
+}
+
+.mat-mdc-option:hover:not(.mdc-list-item--disabled) {
+    background-color: $primaryColor !important;
+    color: $white;
+}
+
+.mat-mdc-text-field-wrapper {
+    height: 48px !important;
+
+    .mdc-text-field--outlined .mdc-notched-outline {
+        height: 48px;
+    }
+
+    .mat-mdc-form-field-infix {
+        min-height: unset !important;
+        padding: 4px 0 !important;
+    }
+
+    input,
+    select,
+    .mat-mdc-select-trigger {
+        height: 40px !important;
+    }
+}
+
+.mdc-notched-outline__trailing,
+.mdc-notched-outline__notch,
+.mdc-notched-outline__leading,
+input,
+textarea {
+    border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.mat-mdc-dialog-panel {
+    max-width: unset !important;
+}

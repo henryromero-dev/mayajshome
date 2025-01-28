@@ -1,0 +1,217 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Inertia",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Factory"
+        }
+    ],
+    "paths": {
+        "/factory/tenant/create/{tenantName}": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Create Tenant",
+                "description": "Creates a new tenant with the specified name. Each tenant represents a separate isolated environment within MayaJS, with its own database and resources.",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tenantName",
+                        "in": "path",
+                        "description": "Name of the tenant",
+                        "required": true,
+                        "type": "string",
+                        "example": "My Tenant"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/tenant/delete/{tenantName}": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Delete Tenant",
+                "description": "Deletes the tenant with the specified name. All resources associated with the tenant will be deleted.",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tenantName",
+                        "in": "path",
+                        "description": "Name of the tenant",
+                        "required": true,
+                        "type": "string",
+                        "example": "My Tenant"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/schema/{tenantName}": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Create Database Schema",
+                "description": "Creates a new database schema for the specified tenant, based on the provided JSON definition. The schema defines the structure of your data (tables, columns, relationships).",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "schema": [
+                                        {
+                                            "customers": {
+                                                "firstname": "text",
+                                                "lastname": "text",
+                                                "phone1": "text",
+                                                "phone2": "text",
+                                                "address": "text",
+                                                "birthdate": "date",
+                                                "dni": "text",
+                                                "orders": [
+                                                    {
+                                                        "orderdate": "date",
+                                                        "ordercode": "text",
+                                                        "total": "float",
+                                                        "ordertype": "text",
+                                                        "note": "longtext",
+                                                        "orderdetails": [
+                                                            {
+                                                                "qty": "int",
+                                                                "total": "float",
+                                                                "products": {
+                                                                    "productcode": "text",
+                                                                    "sku": "text",
+                                                                    "name": "text",
+                                                                    "description": "text",
+                                                                    "price": "float",
+                                                                    "iva": "float",
+                                                                    "discount": "float",
+                                                                    "categories": {
+                                                                        "name": "text",
+                                                                        "description": "text",
+                                                                        "subcategories": [
+                                                                            {
+                                                                                "name": "text",
+                                                                                "description": "text"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "userExt": [
+                                        "customers"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer"
+                    },
+                    {
+                        "name": "tenantName",
+                        "in": "path",
+                        "description": "Name of the tenant",
+                        "required": true,
+                        "type": "string",
+                        "example": "My Tenant"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/schema/read/{tenantName}": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Read Database Schema",
+                "description": "Reads the database schema for the specified tenant.",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tenantName",
+                        "in": "path",
+                        "description": "Name of the tenant",
+                        "required": true,
+                        "type": "string",
+                        "example": "My Tenant"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

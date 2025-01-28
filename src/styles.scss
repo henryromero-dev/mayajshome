@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/buttons.scss';
+@import './styles/stylesm3-theme.scss';
+@import './styles/colors.scss';
+@import './styles/font.scss';
+@import './styles/inputs.scss';
+@import './styles/breakpoints.scss';
+@import './styles/utils.scss';
+@import './styles/pagination.scss';
+@import './styles/loader.scss';
+@import './styles/notification.scss';
+@import './styles/context-menu.scss';
+
+html,
+body {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif !important; 
+    background: $white;
+    margin: 0;
+    line-height: 1.8;
+    letter-spacing: normal;
+    -webkit-font-smoothing: antialiased;
+    &.waiting {
+        opacity: 0;
+    }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.information-container.wrapper {
+    display: none !important;
+}
+
+.scheme-container {
+    display: none !important;
+}

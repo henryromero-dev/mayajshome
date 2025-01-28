@@ -1,0 +1,50 @@
+<h1>
+    Remove (Query and Delete)
+</h1>
+
+<p>
+    <strong>Purpose:</strong> The Remove module allows you to query your data and delete multiple records that match specific criteria in a single operation.  
+    <br><strong>Why It's Important:</strong> Efficiently managing data often requires removing outdated, incorrect, or irrelevant records. The Remove module simplifies this process by combining querying and deletion into a single workflow.
+</p>
+
+<h2>
+    Key Components:
+</h2>
+
+<ul class="list-unstyled mb-5">
+    <li>
+        <strong>Schema:</strong> The top-level object defining the data model you're working with.
+    </li>
+    <li>
+        <strong>Model Names (e.g., "task"):</strong> Properties within the schema object correspond to the names of your models.
+    </li>
+    <li>
+        <strong>Filter Criteria:</strong> Within each model's object, specify the filter criteria using attribute-value pairs (e.g., "status": false). The filter criteria structure is consistent with the Select and Set modules, allowing you to use various operators (like equals, greater than, less than, contains, etc.) to define the records you want to delete.
+    </li>
+</ul>
+
+<h2>
+    Example
+</h2>
+
+<p class="mb-2">
+    Delete Products with a Specific Status:
+</p>
+
+<div class="d-flex w-100 flex-column mb-5">
+    <div style="height: 400px">
+        <ngx-monaco-editor style="height: 100%" [options]="{
+            theme: 'vs-dark', 
+            language: 'json',
+            wordWrap: 'on'
+        }" [(ngModel)]="removeProduct"></ngx-monaco-editor>
+    </div>
+</div>
+
+<h2>
+    Try It Yourself
+</h2>
+
+<div class="w-100">
+    <div id="swagger-ui-item" class="w-100"></div>
+</div>

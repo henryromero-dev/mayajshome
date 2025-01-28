@@ -1,0 +1,195 @@
+<h1>
+    Select
+</h1>
+
+<p>
+    <strong>Purpose:</strong> The Select module enables powerful and flexible querying of your data, allowing you to retrieve specific records based on defined criteria.
+    <br><strong>Why It's Important:</strong> In real-world applications, you rarely need to retrieve all data at once. The Select module empowers you to Isolate specific records that match your search criteria.
+</p>
+
+<h2>
+    Key Components:
+</h2>
+
+<ul class="list-unstyled mb-5">
+    <li><strong>Schema:</strong> The top-level object specifying the data model (schema) you want to query.</li>
+    <li><strong>Model Names (e.g., "name"):</strong> Properties within the schema object correspond to the names of your data models.</li>
+    <li><strong>Filter Criteria:</strong> Within each model's object, you specify the filter criteria for that model using attribute-value pairs (e.g., "name": ""). You can use various operators for filtering (like equals, greater than, less than, contains, etc.).</li>
+</ul>
+
+<h2>
+    Filter Operators
+</h2>
+
+<table class="w-100 mb-5">
+    <thead>
+        <tr>
+            <th>Operator</th>
+            <th>Description</th>
+            <th style="min-width: 100px">Data Types</th>
+            <th>Example</th>
+            <th>Resulting Filter</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>lwt</code></td>
+            <td>Less Than</td>
+            <td>float, int, date</td>
+            <td>{{'{ "op": "lwt", "val": 5 }'}}</td>
+            <td>&lt; 5 or &lt; '2024-07-22'</td>
+        </tr>
+        <tr>
+            <td><code>lgt</code></td>
+            <td>Greater Than</td>
+            <td>float, int, date</td>
+            <td>{{'{ "op": "lgt", "val": "2024-07-20" }'}}</td>
+            <td>&gt; '2024-07-20'</td>
+        </tr>
+        <tr>
+            <td><code>lwt_equals</code></td>
+            <td>Less Than or Equal To</td>
+            <td>float, int, date</td>
+            <td>{{'{ "op": "lwt_equals", "val": 10 }'}}</td>
+            <td>&lt;= 10</td>
+        </tr>
+        <tr>
+            <td><code>lgt_equals</code></td>
+            <td>Greater Than or Equal To</td>
+            <td>float, int, date</td>
+            <td>{{'{ "op": "lgt_equals", "val": "2024-07-22T15:30:00" }'}}</td>
+            <td>&gt;= '2024-07-22T15:30:00'</td>
+        </tr>
+        <tr>
+            <td><code>equals</code></td>
+            <td>Equal To</td>
+            <td>*</td>
+            <td>{{'{ "op": "equals", "val": null }'}}</td>
+            <td>IS NULL</td>
+        </tr>
+        <tr>
+            <td><code>between</code></td>
+            <td>Between</td>
+            <td>float, int, date</td>
+            <td>{{'{ "op": "between", "val": [10, 20] }'}}</td>
+            <td>BETWEEN 10 AND 20</td>
+        </tr>
+        <tr>
+            <td><code>diff</code></td>
+            <td>Not Equal To</td>
+            <td>*</td>
+            <td>{{'{ "op": "diff", "val": "active" }'}}</td>
+            <td>!= 'active'</td>
+        </tr>
+        <tr>
+            <td><code>starts_with</code></td>
+            <td>Starts With</td>
+            <td>string</td>
+            <td>{{'{ "op": "starts_with", "val": "Apple" }'}}</td>
+            <td>LIKE '%Apple'</td>
+        </tr>
+        <tr>
+            <td><code>ends_with</code></td>
+            <td>Ends With</td>
+            <td>string</td>
+            <td>{{'{ "op": "ends_with", "val": ".com" }'}}</td>
+            <td>LIKE '.com%'</td>
+        </tr>
+        <tr>
+            <td><code>like</code></td>
+            <td>Contains</td>
+            <td>string</td>
+            <td>{{'{ "op": "like", "val": "pro" }'}}</td>
+            <td>LIKE '%pro%'</td>
+        </tr>
+        <tr>
+            <td><code>in</code></td>
+            <td>In</td>
+            <td>*</td>
+            <td>{{'{ "op": "in", "val": ["red", "blue"] }'}}</td>
+            <td>IN ('red', 'blue')</td>
+        </tr>
+        <tr>
+            <td><code>not_in</code></td>
+            <td>Not In</td>
+            <td>*</td>
+            <td>{{'{ "op": "not_in", "val": [1, 3, 5] }'}}</td>
+            <td>NOT IN (1, 3, 5)</td>
+        </tr>
+        <tr>
+            <td><code>bracked_in</code></td>
+            <td>Open Bracket</td>
+            <td>N/A</td>
+            <td>{{'{ "op": "bracked_in" }'}}</td>
+            <td>Adds an opening bracket to the filter strin</td>
+        </tr>
+        <tr>
+            <td><code>bracked_out</code></td>
+            <td>Close Bracket</td>
+            <td>N/A</td>
+            <td>{{'{ "op": "bracked_out" }'}}</td>
+            <td>Adds a closing bracket to the filter string</td>
+        </tr>
+        <tr>
+            <td><code>con</code></td>
+            <td>Logical Conjunction</td>
+            <td>N/A</td>
+            <td>{{'{ "con": "and" }'}}</td>
+            <td>Adds AND to the existing filter string</td>
+        </tr>
+
+    </tbody>
+</table>
+
+<h2>
+    Examples
+</h2>
+
+<p class="mb-2">
+    <strong>Simple Filter:</strong> Retrieve all customer where the "name" property is like "Henry".
+</p>
+
+<div class="d-flex w-100 flex-column mb-5">
+    <div style="height: 400px">
+        <ngx-monaco-editor style="height: 100%"  [options]="{
+            theme: 'vs-dark', 
+            language: 'json',
+            wordWrap: 'on'
+        }" [(ngModel)]="simpleFilter"></ngx-monaco-editor>
+    </div>
+</div>
+
+<p class="mb-2">
+    <strong>Nested Filter:</strong> Find all orders placed by customers with the email "henry.ford&#64;mayajs.com":
+</p>
+
+<div class="d-flex w-100 flex-column mb-5">
+    <div style="height: 400px">
+        <ngx-monaco-editor style="height: 100%"  [options]="{
+            theme: 'vs-dark', 
+            language: 'json',
+            wordWrap: 'on'
+        }" [(ngModel)]="nestedFilter"></ngx-monaco-editor>
+    </div>
+</div>
+
+<p class="mb-2">
+    <strong>Complex Filter:</strong> Retrieve all customers who have placed orders with a total value greater than $1000 and a product name that contains "Apple":
+</p>
+
+<div class="d-flex w-100 flex-column mb-5">
+    <div style="height: 400px">
+        <ngx-monaco-editor style="height: 100%"  [options]="{
+            theme: 'vs-dark', 
+            language: 'json',
+            wordWrap: 'on'
+        }" [(ngModel)]="complexFilter"></ngx-monaco-editor>
+    </div>
+</div>
+
+<h2>
+    Try It Yourself
+</h2>
+<div class="w-100">
+    <div id="swagger-ui-item" class="w-100"></div>
+</div>

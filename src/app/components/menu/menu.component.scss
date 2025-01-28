@@ -1,0 +1,25 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/font.scss';
+
+.menu--option {
+    a {
+        display: block;
+        padding: 8px 16px;
+        @extend .text--desktop03;
+        @extend .text--darkgrey;
+        text-decoration: none;
+        &.active {
+            background-color: rgb(255 200 237 / 20%);
+            color: #f5759e;
+            font-weight: 500;
+            border-left: 4px solid #f5759e;
+        }
+    }
+}
+.menu--title {
+    cursor: default;
+    text-transform: uppercase;
+    @extend .semibold;
+    @extend .text--desktop04;
+    @extend .text--lightgrey02;
+}

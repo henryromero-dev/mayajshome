@@ -1,0 +1,48 @@
+$grid-breakpoints: (
+        xs: 0, //Small Mobile
+        sm: 375px, //Mobile
+        md: 768px, //Portrait Tablet
+        lg: 1024px, //Desktop & Landscape Tablet
+        xl: 1440px, //Desktop
+        xxl: 1680px //Desktop
+);
+    
+$container-max-widths: (
+        sm: 375px, //Mobile
+        md: 768px, //Portrait Tablet
+        lg: 1024px, //Desktop & Landscape Tablet
+        xl: 1440px, //Desktop
+        xxl: 1680px //Desktop
+);
+
+$grid-gutter-width: 0;
+
+$breakpoints: ( 'xs': ( max-width: 374px), 
+'sm': ( max-width: 767px), 
+'tablet': ( min-width: 768px), 
+'md': ( max-width: 1023px), 
+'laptop': ( min-width: 1024px), 
+'lg': ( max-width: 1439px ), 
+'desktop': ( min-width: 1440px), 
+'xl': ( max-width: 1679px ), 
+'fullscreen': ( min-width: 1680px)) !default;
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "+"Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+.row{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row>*{
+    padding-left: 0;
+    padding-right: 0;
+}

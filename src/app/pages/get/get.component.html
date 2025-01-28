@@ -1,0 +1,43 @@
+<h1>
+    GET (Query)
+</h1>
+
+<p>
+    <strong>Purpose:</strong> The GET module is your tool for precisely retrieving data from your MayaJS backend. It allows you to perform flexible queries based on specific criteria, returning only the records that match your conditions.
+    <br><strong>Why It's Important:</strong> In most applications, you rarely need to fetch all the data at once. The GET module empowers you to efficiently pinpoint the exact information you require, optimizing data retrieval and processing.
+</p>
+
+<h2>
+    Key Components:
+</h2>
+
+<ul class="list-unstyled">
+    <li><strong>Schema:</strong> The top-level object defining the data model you're working with.</li>
+    <li><strong>Model Names (e.g., "customer"):</strong> Properties within the schema object correspond to the names of your models.</li>
+    <li><strong>Filter Criteria:</strong> Within each model's object, you specify the filter criteria using attribute-value pairs. The filter criteria structure is the same as used in the Select and Get modules, allowing you to leverage a wide range of operators for precise filtering.
+</ul>
+
+<h2>
+    Example
+</h2>
+
+<p class="mb-2">
+    Retrieve Orders Placed After a Certain Date:
+</p>
+
+<div class="d-flex w-100 flex-column mb-5">
+    <div style="height: 400px">
+        <ngx-monaco-editor style="height: 100%"  [options]="{
+            theme: 'vs-dark', 
+            language: 'json',
+            wordWrap: 'on'
+        }" [(ngModel)]="order"></ngx-monaco-editor>
+    </div>
+</div>
+
+<h2>
+    Try It Yourself
+</h2>
+<div class="w-100">
+    <div id="swagger-ui-item" class="w-100"></div>
+</div>

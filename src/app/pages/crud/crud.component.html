@@ -1,0 +1,93 @@
+<h1>
+    Create, Update, Delete
+</h1>
+
+<p>
+    <strong>Purpose:</strong> The CRUD module is your command center for managing data within your MayaJS backend. It provides a streamlined way to create new records, retrieve existing ones, update their information, and delete them when no longer needed.
+    <br><strong>Why It's Important:</strong> CRUD operations are the backbone of virtually every data-driven application. The CRUD module simplifies these fundamental actions, allowing you to interact with your data seamlessly.
+</p>
+
+<h2>
+    Key Components
+</h2>
+
+<ul class="list-unstyled mb-5">
+    <li>
+        <strong>Schema:</strong> Similar to the Select module, the schema is the top-level object that defines the data model you're working with.
+    </li>
+    <li>
+        <strong>Model Names (e.g., "product"):</strong> Properties within the schema object correspond to the names of your models.
+    </li>
+    <li>
+        <strong>Data Objects:</strong> Within each model's object, you provide the data you want to create, update, or delete. The structure of this data object should mirror the attributes defined in your model.
+    </li>
+</ul>
+
+<h2>
+    Operations
+</h2>
+
+<ul class="list-unstyled mb-5">
+    <li>
+        <strong>Create:</strong> To create a new record, send a POST request to the CRUD endpoint with a data object containing the values for the new record.
+    </li>
+    <li>
+        <strong>Update:</strong> To update an existing record, send a POST request to the CRUD endpoint. Include the $guid and $hash values obtained from the Select operation, along with a data object containing the updated values.
+    </li>
+    <li>
+        <strong>Delete:</strong> To delete an existing record, send a POST request to the CRUD endpoint. Include the $guid, $hash, and a parameter named $remove set to true in your request.
+    </li>
+</ul>
+
+<h2>
+    Examples
+</h2>
+
+<p class="mb-2">
+    <strong>Create a New product:</strong> Add a new product with the name "iPhone 13" and a price of $999.99. Also create a new category named "Electronics":
+</p>
+
+<div class="d-flex w-100 flex-column mb-5">
+    <div style="height: 400px">
+        <ngx-monaco-editor style="height: 100%"  [options]="{
+            theme: 'vs-dark', 
+            language: 'json',
+            wordWrap: 'on'
+        }" [(ngModel)]="createProduct"></ngx-monaco-editor>
+    </div>
+</div>
+
+<p class="mb-2">
+    <strong>Update a Product:</strong> Change the price of a product to $1099.99:
+</p>
+
+<div class="d-flex w-100 flex-column mb-5">
+    <div style="height: 400px">
+        <ngx-monaco-editor style="height: 100%"  [options]="{
+            theme: 'vs-dark', 
+            language: 'json',
+            wordWrap: 'on'
+        }" [(ngModel)]="updateProduct"></ngx-monaco-editor>
+    </div>
+</div>
+
+<p class="mb-2">
+    <strong>Delete a Product:</strong> Remove a selected product from the database:
+</p>
+
+<div class="d-flex w-100 flex-column mb-5">
+    <div style="height: 400px">
+        <ngx-monaco-editor style="height: 100%"  [options]="{
+            theme: 'vs-dark', 
+            language: 'json',
+            wordWrap: 'on'
+        }" [(ngModel)]="deleteProduct"></ngx-monaco-editor>
+    </div>
+</div>
+
+<h2>
+    Try It Yourself
+</h2>
+<div class="w-100">
+    <div id="swagger-ui-item" class="w-100"></div>
+</div>

@@ -1,0 +1,21 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/font.scss';
+
+h1 {
+    @extend .text--heading03;
+    @extend .text--darkgrey;
+    @extend .bold;
+    @extend .text--darkgrey;
+    margin-bottom: 32px;
+}
+p {
+    @extend .text--desktop02;
+    @extend .text--darkgrey;
+    margin-bottom: 48px;
+    line-height: 32px;
+}
+li {
+    p {
+        margin-bottom: 0;
+    }
+}

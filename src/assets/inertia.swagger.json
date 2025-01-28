@@ -1,0 +1,1785 @@
+{
+    "servers": [
+        {
+            "url": "http://localhost:3000"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Auth"
+        },
+        {
+            "name": "Factory"
+        },
+        {
+            "name": "Ftp"
+        },
+        {
+            "name": "Api"
+        }
+    ],
+    "paths": {
+        "/auth/login/core/admins/": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Login Copy",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "username": "henry5",
+                                    "password": "12345671"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/register/2610448c-50aa-4724-a7a9-1d64ae26815e/operators/": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Register",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "username": "henry35",
+                                    "password": "123456",
+                                    "confirmPassword": "123456",
+                                    "content": {
+                                        "firstname": "Henry"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/logout/": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Logout",
+                "requestBody": {
+                    "content": {}
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/refresh/": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Refresh",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/reset": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Reset",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "password": "12345671",
+                                    "confirmPassword": "12345671",
+                                    "oldPassword": "1234567"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/tenant/create/sample6": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "CreateTenant",
+                "requestBody": {
+                    "content": {}
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MTEsIiRndWlkIjoiMGVkMmVjMzctNmQ4NC00YTIyLWI3MjItY2Q4NzYwYWNiODIxIiwiJG93bmVyIjowLCJ1c2VybmFtZSI6ImhlbnJ5NSIsImxhbmciOiIiLCJ0aW1lem9uZSI6IiIsIiRoYXNoIjoiLTExMzAwNjM2ODMiLCJyb2xlcyI6W3sibWV0YSI6ImFkbWlucyIsIm5hbWUiOiJhZG1pbnMiLCJfY3JlYXRlIjpudWxsLCJfcmVhZCI6bnVsbCwiX3VwZGF0ZSI6bnVsbCwiX2RlbGV0ZSI6bnVsbH1dLCIkZ3JvdXBFbmFibGVkIjp0cnVlLCIkZ3JvdXAiOm51bGwsIiRtYXAiOltdfSwibW9kIjoiIiwidGVuYW50IjoiY29yZSIsInNlc3Npb25JZCI6ImIzZGJlYzBiLWViMjAtNDUyZi1hNzEyLWEwNWNhNDJkODZlMiIsImlhdCI6MTY3NTAxNjI3OSwiZXhwIjoxNjc2MjE2Mjc5fQ.3mH_Vr_Z5oJuLeRwsN6HEaqK7fce1C3ns5WSFtCvHFA"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/tenant/delete/sample1": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "DeleteTenant",
+                "requestBody": {
+                    "content": {}
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/schema/sample1": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Schema Copy",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "deepClean": "true",
+                                    "schema": [
+                                        {
+                                            "customers": {
+                                                "firstname": "text",
+                                                "lastname": "text",
+                                                "phone1": "text",
+                                                "phone2": "text",
+                                                "address": "text",
+                                                "birthdate": "date",
+                                                "dni": "text",
+                                                "status": "text",
+                                                "customer_images": [
+                                                    {
+                                                        "imageurl": "image"
+                                                    }
+                                                ],
+                                                "customers_x_customertype": [
+                                                    {
+                                                        "customertype": {
+                                                            "name": "text"
+                                                        }
+                                                    }
+                                                ],
+                                                "customers_x_business": [
+                                                    {
+                                                        "business": {
+                                                            "name": "text"
+                                                        }
+                                                    }
+                                                ],
+                                                "istaxpayer": "boolean",
+                                                "isespecialtaxpayer": "boolean",
+                                                "taxpayerpercentage": "float",
+                                                "creditdays": "int",
+                                                "creditlimit": "float",
+                                                "billingaddress": [
+                                                    {
+                                                        "latitude": "float",
+                                                        "longitude": "float",
+                                                        "city": {
+                                                            "name": "text",
+                                                            "code": "text",
+                                                            "latitude": "float",
+                                                            "longitude": "float",
+                                                            "countrystate": {
+                                                                "name": "text",
+                                                                "code": "text",
+                                                                "latitude": "float",
+                                                                "longitude": "float",
+                                                                "country": {
+                                                                    "name": "text",
+                                                                    "code": "text",
+                                                                    "latitude": "float",
+                                                                    "longitude": "float"
+                                                                }
+                                                            }
+                                                        },
+                                                        "zipcode": "text",
+                                                        "line1": "text",
+                                                        "line2": "text"
+                                                    }
+                                                ],
+                                                "shippingaddress": [
+                                                    {
+                                                        "latitude": "float",
+                                                        "longitude": "float",
+                                                        "city": {
+                                                            "name": "text",
+                                                            "code": "text"
+                                                        },
+                                                        "zipcode": "text",
+                                                        "line1": "text",
+                                                        "line2": "text"
+                                                    }
+                                                ],
+                                                "cxp": {
+                                                    "name": "text",
+                                                    "description": "text",
+                                                    "phone": "text"
+                                                },
+                                                "orders": [
+                                                    {
+                                                        "users": {
+                                                            "firstname": "text",
+                                                            "lastname": "text",
+                                                            "dni": "text",
+                                                            "birthdate": "text",
+                                                            "password": "text",
+                                                            "role_id": "int",
+                                                            "status": "boolean",
+                                                            "email": "text",
+                                                            "address": "longtext"
+                                                        },
+                                                        "sellers": {
+                                                            "firstname": "text",
+                                                            "lastname": "text",
+                                                            "phone1": "text",
+                                                            "phone2": "text",
+                                                            "address": "text",
+                                                            "birthdate": "date",
+                                                            "dni": "text",
+                                                            "status": "text",
+                                                            "sellertype": "text"
+                                                        },
+                                                        "orderdate": "date",
+                                                        "ordercode": "text",
+                                                        "total": "float",
+                                                        "subtotal": "float",
+                                                        "totaldiscount": "float",
+                                                        "totaliva": "float",
+                                                        "ordertype": "text",
+                                                        "meta": "longtext",
+                                                        "note": "longtext",
+                                                        "note_private": "longtext",
+                                                        "orderdetails": [
+                                                            {
+                                                                "discount": "float",
+                                                                "iva": "float",
+                                                                "qty": "int",
+                                                                "total": "float",
+                                                                "products": {
+                                                                    "store": {
+                                                                        "name": "text"
+                                                                    },
+                                                                    "productcode": "text",
+                                                                    "sku": "text",
+                                                                    "name": "text",
+                                                                    "description": "text",
+                                                                    "price": "float",
+                                                                    "iva": "float",
+                                                                    "discount": "float",
+                                                                    "product_x_producttype": [
+                                                                        {
+                                                                            "producttype": {
+                                                                                "name": "text",
+                                                                                "description": "text"
+                                                                            }
+                                                                        }
+                                                                    ],
+                                                                    "$stock_11": true,
+                                                                    "stock": {
+                                                                        "actualqty": "int",
+                                                                        "minqty": "int",
+                                                                        "maxqty": "int",
+                                                                        "$products_11": true
+                                                                    },
+                                                                    "categories": {
+                                                                        "name": "text",
+                                                                        "description": "text",
+                                                                        "subcategories": [
+                                                                            {
+                                                                                "name": "text",
+                                                                                "description": "text"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "product_x_subcategories": [
+                                                                        {
+                                                                            "subcategories": {
+                                                                                "name": "text"
+                                                                            }
+                                                                        }
+                                                                    ],
+                                                                    "attributes": [
+                                                                        {
+                                                                            "name": "text",
+                                                                            "description": "text"
+                                                                        }
+                                                                    ],
+                                                                    "supplier": {
+                                                                        "firstname": "text",
+                                                                        "lastname": "text",
+                                                                        "phone1": "text",
+                                                                        "phone2": "text",
+                                                                        "address": "text",
+                                                                        "birthdate": "date",
+                                                                        "dni": "text",
+                                                                        "status": "text",
+                                                                        "suppliertype": "text"
+                                                                    }
+                                                                }
+                                                            }
+                                                        ],
+                                                        "invoices": {
+                                                            "invoicecode": "text",
+                                                            "invoicedate": "date",
+                                                            "invoicecontent": "longtext"
+                                                        },
+                                                        "statesxorders": [
+                                                            {
+                                                                "states": {
+                                                                    "statename": "text"
+                                                                }
+                                                            }
+                                                        ],
+                                                        "payments": [
+                                                            {
+                                                                "method": "text",
+                                                                "reference": "text",
+                                                                "paymenttype": "text",
+                                                                "description": "text",
+                                                                "amount": "float",
+                                                                "rate": "float",
+                                                                "total": "flaot"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "userExt": [
+                                        "sellers",
+                                        "customers"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/schema/read/c35dee05-fff3-420b-84f7-c911686d2556": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Read Schema",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {}
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MTEsIiRndWlkIjoiMGVkMmVjMzctNmQ4NC00YTIyLWI3MjItY2Q4NzYwYWNiODIxIiwiJG93bmVyIjowLCJ1c2VybmFtZSI6ImhlbnJ5NSIsImxhbmciOiIiLCJ0aW1lem9uZSI6IiIsImNsaWVudHNfaWQiOm51bGwsIiRoYXNoIjoiLTExMzAwNjM2ODMiLCJyb2xlcyI6W3sibWV0YSI6ImFkbWlucyIsIm5hbWUiOiJhZG1pbnMiLCJfY3JlYXRlIjo5LCJfcmVhZCI6OSwiX3VwZGF0ZSI6OSwiX2RlbGV0ZSI6OX1dLCIkZ3JvdXBFbmFibGVkIjp0cnVlLCIkZ3JvdXAiOm51bGwsIiRtYXAiOltdfSwibW9kIjoiIiwidGVuYW50IjoiY29yZSIsInNlc3Npb25JZCI6IjNjNmFjMWNhLTE3NzAtNDNhYi04M2ViLTBmNTA3NDllM2ZlYiIsImlhdCI6MTY3NTQzODcyMCwiZXhwIjoxNjc2NjM4NzIwfQ.owb7nFkCB-vEKaZvpbWTF7R1KH2mb3juuUwUOy0Vw_o"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/object/read/e937032c-15a4-4d4b-a541-f498249de138": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Read Object",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "filters": {
+                                        "str": "country4"
+                                    },
+                                    "orderBy": {},
+                                    "pagination": {}
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MTEsIiRndWlkIjoiMGVkMmVjMzctNmQ4NC00YTIyLWI3MjItY2Q4NzYwYWNiODIxIiwiJG93bmVyIjowLCJ1c2VybmFtZSI6ImhlbnJ5NSIsImxhbmciOiIiLCJ0aW1lem9uZSI6IiIsIiRoYXNoIjoiLTExMzAwNjM2ODMiLCJyb2xlcyI6W3sibWV0YSI6ImFkbWlucyIsIm5hbWUiOiJhZG1pbnMiLCJfY3JlYXRlIjpudWxsLCJfcmVhZCI6bnVsbCwiX3VwZGF0ZSI6bnVsbCwiX2RlbGV0ZSI6bnVsbH1dLCIkZ3JvdXBFbmFibGVkIjp0cnVlLCIkZ3JvdXAiOm51bGwsIiRtYXAiOltdfSwibW9kIjoiIiwidGVuYW50IjoiY29yZSIsInNlc3Npb25JZCI6ImY0ZGUyZTc3LTVjYzYtNDk4NS1iYWEwLTQwYmNhZWI5ODIyNSIsImlhdCI6MTY3NTAzMzU0MSwiZXhwIjoxNjc2MjMzNTQxfQ.DDrkzuk9BmhEWY-Y1UbZhM5zMXVQsSTdpiFwyaIBdLI"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/object/upsert/e937032c-15a4-4d4b-a541-f498249de138": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Upsert Object",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "object": {
+                                        "str": "country5",
+                                        "guid": "2622435c-aa14-4f5c-b110-3720a2539bce",
+                                        "createdOn": "2023-01-29T20:48:24.981Z",
+                                        "updatedOn": "2023-01-29T20:48:24.981Z",
+                                        "creator": 0,
+                                        "updatedBy": 0,
+                                        "label": "",
+                                        "pluralLabel": "",
+                                        "description": "",
+                                        "morphology": "",
+                                        "visibility": "()",
+                                        "writable": true,
+                                        "readable": true,
+                                        "transferable": false,
+                                        "cacheable": false,
+                                        "concurrency": false,
+                                        "clientapp": false,
+                                        "properties": {
+                                            "name": {
+                                                "str": "name",
+                                                "type": "text",
+                                                "guid": "da50b98a-702e-466f-9c04-27a6d5b070d5",
+                                                "defaultValue": "",
+                                                "description": "",
+                                                "encrypt": "",
+                                                "helptext": "",
+                                                "label": "",
+                                                "pluralLabel": "",
+                                                "placeholder": "",
+                                                "expression": "",
+                                                "mask": "",
+                                                "length": 0,
+                                                "writable": true,
+                                                "readable": true,
+                                                "required": false,
+                                                "unique": false,
+                                                "meta": null
+                                            },
+                                            "code": {
+                                                "str": "code",
+                                                "type": "text",
+                                                "guid": "ed12855f-cb8b-461d-bdb1-0e74af6b0cc1",
+                                                "defaultValue": "",
+                                                "description": "",
+                                                "encrypt": "",
+                                                "helptext": "",
+                                                "label": "",
+                                                "pluralLabel": "",
+                                                "placeholder": "",
+                                                "expression": "",
+                                                "mask": "",
+                                                "length": 0,
+                                                "writable": true,
+                                                "readable": true,
+                                                "required": false,
+                                                "unique": false,
+                                                "meta": null
+                                            },
+                                            "sample2": {
+                                                "str": "sample2",
+                                                "type": "float",
+                                                "guid": "ed12855f-cb8b-461d-bdb1-0e74af6b0cc1",
+                                                "defaultValue": "",
+                                                "description": "",
+                                                "encrypt": "",
+                                                "helptext": "",
+                                                "label": "",
+                                                "pluralLabel": "",
+                                                "placeholder": "",
+                                                "expression": "",
+                                                "mask": "",
+                                                "length": 0,
+                                                "writable": true,
+                                                "readable": true,
+                                                "required": true,
+                                                "unique": false,
+                                                "meta": null
+                                            },
+                                            "latitude": {
+                                                "str": "latitude",
+                                                "type": "float",
+                                                "guid": "80131a14-451e-46a9-b8ec-438c3839cf21",
+                                                "defaultValue": "",
+                                                "description": "",
+                                                "encrypt": "",
+                                                "helptext": "",
+                                                "label": "",
+                                                "pluralLabel": "",
+                                                "placeholder": "",
+                                                "expression": "",
+                                                "mask": "",
+                                                "length": 0,
+                                                "writable": true,
+                                                "readable": true,
+                                                "required": false,
+                                                "unique": false,
+                                                "meta": null
+                                            },
+                                            "longitude": {
+                                                "str": "longitude",
+                                                "type": "float",
+                                                "guid": "1c3fbec0-6d82-4af7-aa05-fa14fb554cfe",
+                                                "defaultValue": "",
+                                                "description": "",
+                                                "encrypt": "",
+                                                "helptext": "",
+                                                "label": "",
+                                                "pluralLabel": "",
+                                                "placeholder": "",
+                                                "expression": "",
+                                                "mask": "",
+                                                "length": 0,
+                                                "writable": true,
+                                                "readable": true,
+                                                "required": false,
+                                                "unique": false,
+                                                "meta": null
+                                            },
+                                            "countrystate": {
+                                                "str": "countrystate",
+                                                "type": "1n+",
+                                                "guid": "b7f0fe54-9acc-4e51-9eda-d09ad20b4e14",
+                                                "defaultValue": "",
+                                                "description": "",
+                                                "encrypt": "",
+                                                "helptext": "",
+                                                "label": "",
+                                                "pluralLabel": "",
+                                                "placeholder": "",
+                                                "expression": "",
+                                                "mask": "",
+                                                "length": 0,
+                                                "writable": true,
+                                                "readable": true,
+                                                "required": false,
+                                                "unique": false,
+                                                "meta": null
+                                            },
+                                            "guid": {
+                                                "str": "guid",
+                                                "type": "86a579b6-a20a-44f3-88ed-b2b4d5c8decb",
+                                                "guid": "ff02ba56-7e44-4d7a-b1e6-50fb25ed3a89",
+                                                "defaultValue": "",
+                                                "description": "",
+                                                "encrypt": "",
+                                                "helptext": "",
+                                                "label": "",
+                                                "pluralLabel": "",
+                                                "placeholder": "",
+                                                "expression": "",
+                                                "mask": "",
+                                                "length": 0,
+                                                "writable": true,
+                                                "readable": true,
+                                                "required": false,
+                                                "unique": false,
+                                                "meta": null
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MTEsIiRndWlkIjoiMGVkMmVjMzctNmQ4NC00YTIyLWI3MjItY2Q4NzYwYWNiODIxIiwiJG93bmVyIjowLCJ1c2VybmFtZSI6ImhlbnJ5NSIsImxhbmciOiIiLCJ0aW1lem9uZSI6IiIsIiRoYXNoIjoiLTExMzAwNjM2ODMiLCJyb2xlcyI6W3sibWV0YSI6ImFkbWlucyIsIm5hbWUiOiJhZG1pbnMiLCJfY3JlYXRlIjo5LCJfcmVhZCI6OSwiX3VwZGF0ZSI6OSwiX2RlbGV0ZSI6OX1dLCIkZ3JvdXBFbmFibGVkIjp0cnVlLCIkZ3JvdXAiOm51bGwsIiRtYXAiOltdfSwibW9kIjoiIiwidGVuYW50IjoiY29yZSIsInNlc3Npb25JZCI6IjNiMDRiNTgwLWU4MjUtNDUzYS05Y2YwLTBjNGI3ZmUxNzUzMSIsImlhdCI6MTY3NTAzNjYwNywiZXhwIjoxNjc2MjM2NjA3fQ.fnhSQFYW-kg8ztitXt-wbQ60_xbVU7ji_rckh2KS7AE"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/object/destroy/e937032c-15a4-4d4b-a541-f498249de138": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Destroy Object",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "object": {
+                                        "str": "country5",
+                                        "guid": "2622435c-aa14-4f5c-b110-3720a2539bce",
+                                        "createdOn": "2023-01-29T20:48:24.981Z",
+                                        "updatedOn": "2023-01-29T20:48:24.981Z",
+                                        "creator": 0,
+                                        "updatedBy": 0,
+                                        "label": "",
+                                        "pluralLabel": "",
+                                        "description": "",
+                                        "morphology": "",
+                                        "visibility": "()",
+                                        "writable": true,
+                                        "readable": true,
+                                        "transferable": false,
+                                        "cacheable": false,
+                                        "concurrency": false,
+                                        "clientapp": false,
+                                        "properties": {
+                                            "name": {
+                                                "str": "name",
+                                                "type": "text",
+                                                "guid": "da50b98a-702e-466f-9c04-27a6d5b070d5",
+                                                "defaultValue": "",
+                                                "description": "",
+                                                "encrypt": "",
+                                                "helptext": "",
+                                                "label": "",
+                                                "pluralLabel": "",
+                                                "placeholder": "",
+                                                "expression": "",
+                                                "mask": "",
+                                                "length": 0,
+                                                "writable": true,
+                                                "readable": true,
+                                                "required": false,
+                                                "unique": false,
+                                                "meta": null
+                                            },
+                                            "code": {
+                                                "str": "code",
+                                                "type": "text",
+                                                "guid": "ed12855f-cb8b-461d-bdb1-0e74af6b0cc1",
+                                                "defaultValue": "",
+                                                "description": "",
+                                                "encrypt": "",
+                                                "helptext": "",
+                                                "label": "",
+                                                "pluralLabel": "",
+                                                "placeholder": "",
+                                                "expression": "",
+                                                "mask": "",
+                                                "length": 0,
+                                                "writable": true,
+                                                "readable": true,
+                                                "required": false,
+                                                "unique": false,
+                                                "meta": null
+                                            },
+                                            "sample2": {
+                                                "str": "sample2",
+                                                "type": "float",
+                                                "guid": "ed12855f-cb8b-461d-bdb1-0e74af6b0cc1",
+                                                "defaultValue": "",
+                                                "description": "",
+                                                "encrypt": "",
+                                                "helptext": "",
+                                                "label": "",
+                                                "pluralLabel": "",
+                                                "placeholder": "",
+                                                "expression": "",
+                                                "mask": "",
+                                                "length": 0,
+                                                "writable": true,
+                                                "readable": true,
+                                                "required": true,
+                                                "unique": false,
+                                                "meta": null
+                                            },
+                                            "latitude": {
+                                                "str": "latitude",
+                                                "type": "float",
+                                                "guid": "80131a14-451e-46a9-b8ec-438c3839cf21",
+                                                "defaultValue": "",
+                                                "description": "",
+                                                "encrypt": "",
+                                                "helptext": "",
+                                                "label": "",
+                                                "pluralLabel": "",
+                                                "placeholder": "",
+                                                "expression": "",
+                                                "mask": "",
+                                                "length": 0,
+                                                "writable": true,
+                                                "readable": true,
+                                                "required": false,
+                                                "unique": false,
+                                                "meta": null
+                                            },
+                                            "longitude": {
+                                                "str": "longitude",
+                                                "type": "float",
+                                                "guid": "1c3fbec0-6d82-4af7-aa05-fa14fb554cfe",
+                                                "defaultValue": "",
+                                                "description": "",
+                                                "encrypt": "",
+                                                "helptext": "",
+                                                "label": "",
+                                                "pluralLabel": "",
+                                                "placeholder": "",
+                                                "expression": "",
+                                                "mask": "",
+                                                "length": 0,
+                                                "writable": true,
+                                                "readable": true,
+                                                "required": false,
+                                                "unique": false,
+                                                "meta": null
+                                            },
+                                            "countrystate": {
+                                                "str": "countrystate",
+                                                "type": "1n+",
+                                                "guid": "b7f0fe54-9acc-4e51-9eda-d09ad20b4e14",
+                                                "defaultValue": "",
+                                                "description": "",
+                                                "encrypt": "",
+                                                "helptext": "",
+                                                "label": "",
+                                                "pluralLabel": "",
+                                                "placeholder": "",
+                                                "expression": "",
+                                                "mask": "",
+                                                "length": 0,
+                                                "writable": true,
+                                                "readable": true,
+                                                "required": false,
+                                                "unique": false,
+                                                "meta": null
+                                            },
+                                            "guid": {
+                                                "str": "guid",
+                                                "type": "86a579b6-a20a-44f3-88ed-b2b4d5c8decb",
+                                                "guid": "ff02ba56-7e44-4d7a-b1e6-50fb25ed3a89",
+                                                "defaultValue": "",
+                                                "description": "",
+                                                "encrypt": "",
+                                                "helptext": "",
+                                                "label": "",
+                                                "pluralLabel": "",
+                                                "placeholder": "",
+                                                "expression": "",
+                                                "mask": "",
+                                                "length": 0,
+                                                "writable": true,
+                                                "readable": true,
+                                                "required": false,
+                                                "unique": false,
+                                                "meta": null
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MTEsIiRndWlkIjoiMGVkMmVjMzctNmQ4NC00YTIyLWI3MjItY2Q4NzYwYWNiODIxIiwiJG93bmVyIjowLCJ1c2VybmFtZSI6ImhlbnJ5NSIsImxhbmciOiIiLCJ0aW1lem9uZSI6IiIsIiRoYXNoIjoiLTExMzAwNjM2ODMiLCJyb2xlcyI6W3sibWV0YSI6ImFkbWlucyIsIm5hbWUiOiJhZG1pbnMiLCJfY3JlYXRlIjo5LCJfcmVhZCI6OSwiX3VwZGF0ZSI6OSwiX2RlbGV0ZSI6OX1dLCIkZ3JvdXBFbmFibGVkIjp0cnVlLCIkZ3JvdXAiOm51bGwsIiRtYXAiOltdfSwibW9kIjoiIiwidGVuYW50IjoiY29yZSIsInNlc3Npb25JZCI6IjNiMDRiNTgwLWU4MjUtNDUzYS05Y2YwLTBjNGI3ZmUxNzUzMSIsImlhdCI6MTY3NTAzNjYwNywiZXhwIjoxNjc2MjM2NjA3fQ.fnhSQFYW-kg8ztitXt-wbQ60_xbVU7ji_rckh2KS7AE"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/authorization/read/17a3af91-7e7f-43d3-9541-49c761c5af6b": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Read Authorization",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "root": "country"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MTEsIiRndWlkIjoiMGVkMmVjMzctNmQ4NC00YTIyLWI3MjItY2Q4NzYwYWNiODIxIiwiJG93bmVyIjowLCJ1c2VybmFtZSI6ImhlbnJ5NSIsImxhbmciOiIiLCJ0aW1lem9uZSI6IiIsIiRoYXNoIjoiLTExMzAwNjM2ODMiLCJyb2xlcyI6W3sibWV0YSI6ImFkbWlucyIsIm5hbWUiOiJhZG1pbnMiLCJfY3JlYXRlIjpudWxsLCJfcmVhZCI6bnVsbCwiX3VwZGF0ZSI6bnVsbCwiX2RlbGV0ZSI6bnVsbH1dLCIkZ3JvdXBFbmFibGVkIjp0cnVlLCIkZ3JvdXAiOm51bGwsIiRtYXAiOltdfSwibW9kIjoiIiwidGVuYW50IjoiY29yZSIsInNlc3Npb25JZCI6ImY0ZGUyZTc3LTVjYzYtNDk4NS1iYWEwLTQwYmNhZWI5ODIyNSIsImlhdCI6MTY3NTAzMzU0MSwiZXhwIjoxNjc2MjMzNTQxfQ.DDrkzuk9BmhEWY-Y1UbZhM5zMXVQsSTdpiFwyaIBdLI"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/authorization/update/17a3af91-7e7f-43d3-9541-49c761c5af6b": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Update Authorization",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "root": "country",
+                                    "authorization": {
+                                        "create": 10,
+                                        "update": 0,
+                                        "delete": 0,
+                                        "read": 0,
+                                        "share": 0,
+                                        "transfer": 0,
+                                        "clientapp": 0
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MTEsIiRndWlkIjoiMGVkMmVjMzctNmQ4NC00YTIyLWI3MjItY2Q4NzYwYWNiODIxIiwiJG93bmVyIjowLCJ1c2VybmFtZSI6ImhlbnJ5NSIsImxhbmciOiIiLCJ0aW1lem9uZSI6IiIsIiRoYXNoIjoiLTExMzAwNjM2ODMiLCJyb2xlcyI6W3sibWV0YSI6ImFkbWlucyIsIm5hbWUiOiJhZG1pbnMiLCJfY3JlYXRlIjpudWxsLCJfcmVhZCI6bnVsbCwiX3VwZGF0ZSI6bnVsbCwiX2RlbGV0ZSI6bnVsbH1dLCIkZ3JvdXBFbmFibGVkIjp0cnVlLCIkZ3JvdXAiOm51bGwsIiRtYXAiOltdfSwibW9kIjoiIiwidGVuYW50IjoiY29yZSIsInNlc3Npb25JZCI6ImY0ZGUyZTc3LTVjYzYtNDk4NS1iYWEwLTQwYmNhZWI5ODIyNSIsImlhdCI6MTY3NTAzMzU0MSwiZXhwIjoxNjc2MjMzNTQxfQ.DDrkzuk9BmhEWY-Y1UbZhM5zMXVQsSTdpiFwyaIBdLI"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/actions/read/17a3af91-7e7f-43d3-9541-49c761c5af6b": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Read Actions",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "root": "cxp"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MTEsIiRndWlkIjoiMGVkMmVjMzctNmQ4NC00YTIyLWI3MjItY2Q4NzYwYWNiODIxIiwiJG93bmVyIjowLCJ1c2VybmFtZSI6ImhlbnJ5NSIsImxhbmciOiIiLCJ0aW1lem9uZSI6IiIsIiRoYXNoIjoiLTExMzAwNjM2ODMiLCJyb2xlcyI6W3sibWV0YSI6ImFkbWlucyIsIm5hbWUiOiJhZG1pbnMiLCJfY3JlYXRlIjpudWxsLCJfcmVhZCI6bnVsbCwiX3VwZGF0ZSI6bnVsbCwiX2RlbGV0ZSI6bnVsbH1dLCIkZ3JvdXBFbmFibGVkIjp0cnVlLCIkZ3JvdXAiOm51bGwsIiRtYXAiOltdfSwibW9kIjoiIiwidGVuYW50IjoiY29yZSIsInNlc3Npb25JZCI6ImY0ZGUyZTc3LTVjYzYtNDk4NS1iYWEwLTQwYmNhZWI5ODIyNSIsImlhdCI6MTY3NTAzMzU0MSwiZXhwIjoxNjc2MjMzNTQxfQ.DDrkzuk9BmhEWY-Y1UbZhM5zMXVQsSTdpiFwyaIBdLI"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/actions/get/17a3af91-7e7f-43d3-9541-49c761c5af6b": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Get Action",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "root": "cxp",
+                                    "action": {
+                                        "name": "sample3",
+                                        "status": true
+                                    },
+                                    "type": "afterCrud"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MTEsIiRndWlkIjoiMGVkMmVjMzctNmQ4NC00YTIyLWI3MjItY2Q4NzYwYWNiODIxIiwiJG93bmVyIjowLCJ1c2VybmFtZSI6ImhlbnJ5NSIsImxhbmciOiIiLCJ0aW1lem9uZSI6IiIsIiRoYXNoIjoiLTExMzAwNjM2ODMiLCJyb2xlcyI6W3sibWV0YSI6ImFkbWlucyIsIm5hbWUiOiJhZG1pbnMiLCJfY3JlYXRlIjpudWxsLCJfcmVhZCI6bnVsbCwiX3VwZGF0ZSI6bnVsbCwiX2RlbGV0ZSI6bnVsbH1dLCIkZ3JvdXBFbmFibGVkIjp0cnVlLCIkZ3JvdXAiOm51bGwsIiRtYXAiOltdfSwibW9kIjoiIiwidGVuYW50IjoiY29yZSIsInNlc3Npb25JZCI6ImY0ZGUyZTc3LTVjYzYtNDk4NS1iYWEwLTQwYmNhZWI5ODIyNSIsImlhdCI6MTY3NTAzMzU0MSwiZXhwIjoxNjc2MjMzNTQxfQ.DDrkzuk9BmhEWY-Y1UbZhM5zMXVQsSTdpiFwyaIBdLI"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/actions/upsert/b2b42482-c6fe-43b2-bd47-a9bb14cf7997": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Upsert Action",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "root": "cryptocurrencies",
+                                    "action": {
+                                        "name": "fetch-crypto-images",
+                                        "cron": "*/2 * * * *",
+                                        "status": true
+                                    },
+                                    "type": "customPrivate",
+                                    "code": "function() { return [] }"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MSwiJGd1aWQiOiI1OWY4YjRmYi05NjQxLTQ0OTEtOTlhYS0zZTYyMjllZDczMTMiLCIkb3duZXIiOjAsInVzZXJuYW1lIjoic3lzdGVtIiwibGFuZyI6IiIsInRpbWV6b25lIjoiIiwiY2xpZW50c19pZCI6bnVsbCwiJGhhc2giOiItMjE0NDE3NTQyNCIsInJvbGVzIjpbeyJtZXRhIjoic3lzdGVtIiwibmFtZSI6IlN5c3RlbSIsIl9jcmVhdGUiOjEwLCJfcmVhZCI6MTAsIl91cGRhdGUiOjEwLCJfZGVsZXRlIjoxMH1dLCIkZ3JvdXBFbmFibGVkIjp0cnVlLCIkZ3JvdXAiOm51bGwsIiRtYXAiOltdfSwibW9kIjoiIiwidGVuYW50IjoiY29yZSIsInNlc3Npb25JZCI6IjIyMDAyM2JmLTc5NzQtNDg3Ny04Y2QyLWI2MGQ1YjFhY2ZmMSIsImlhdCI6MTY5MTI3ODAwOSwiZXhwIjoxNjkyNDc4MDA5fQ.u0MZP6DLSNDvKMQchIvXSIAqYcnXRWF5uLt0Lkvx9S0"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/actions/destroy/17a3af91-7e7f-43d3-9541-49c761c5af6b": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Destroy Action",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "root": "cxp",
+                                    "action": {
+                                        "name": "sample3",
+                                        "status": true
+                                    },
+                                    "type": "afterCrud"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MTEsIiRndWlkIjoiMGVkMmVjMzctNmQ4NC00YTIyLWI3MjItY2Q4NzYwYWNiODIxIiwiJG93bmVyIjowLCJ1c2VybmFtZSI6ImhlbnJ5NSIsImxhbmciOiIiLCJ0aW1lem9uZSI6IiIsIiRoYXNoIjoiLTExMzAwNjM2ODMiLCJyb2xlcyI6W3sibWV0YSI6ImFkbWlucyIsIm5hbWUiOiJhZG1pbnMiLCJfY3JlYXRlIjpudWxsLCJfcmVhZCI6bnVsbCwiX3VwZGF0ZSI6bnVsbCwiX2RlbGV0ZSI6bnVsbH1dLCIkZ3JvdXBFbmFibGVkIjp0cnVlLCIkZ3JvdXAiOm51bGwsIiRtYXAiOltdfSwibW9kIjoiIiwidGVuYW50IjoiY29yZSIsInNlc3Npb25JZCI6ImY0ZGUyZTc3LTVjYzYtNDk4NS1iYWEwLTQwYmNhZWI5ODIyNSIsImlhdCI6MTY3NTAzMzU0MSwiZXhwIjoxNjc2MjMzNTQxfQ.DDrkzuk9BmhEWY-Y1UbZhM5zMXVQsSTdpiFwyaIBdLI"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/events/upsert/2610448c-50aa-4724-a7a9-1d64ae26815e": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Upsert Event",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "event": {
+                                        "name": "cryptomanager-make-groups",
+                                        "status": true,
+                                        "type": "guess",
+                                        "oneInstance": false
+                                    },
+                                    "code": ""
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MSwiJGd1aWQiOiI1OWY4YjRmYi05NjQxLTQ0OTEtOTlhYS0zZTYyMjllZDczMTMiLCIkb3duZXIiOjAsInVzZXJuYW1lIjoic3lzdGVtIiwibGFuZyI6IiIsInRpbWV6b25lIjoiIiwiY2xpZW50c19pZCI6bnVsbCwiJGhhc2giOiItMjE0NDE3NTQyNCIsInJvbGVzIjpbeyJtZXRhIjoic3lzdGVtIiwibmFtZSI6IlN5c3RlbSIsIl9jcmVhdGUiOjEwLCJfcmVhZCI6MTAsIl91cGRhdGUiOjEwLCJfZGVsZXRlIjoxMH1dLCIkZ3JvdXBFbmFibGVkIjp0cnVlLCIkZ3JvdXAiOm51bGwsIiRtYXAiOltdfSwibW9kIjoiIiwidGVuYW50IjoiY29yZSIsInNlc3Npb25JZCI6IjIyMDAyM2JmLTc5NzQtNDg3Ny04Y2QyLWI2MGQ1YjFhY2ZmMSIsImlhdCI6MTY5MTI3ODAwOSwiZXhwIjoxNjkyNDc4MDA5fQ.u0MZP6DLSNDvKMQchIvXSIAqYcnXRWF5uLt0Lkvx9S0"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/events/trigger/67a535b9-6258-4b10-a1d7-fec0353b988a": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Trigger Event",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "type": "guess",
+                                    "eventName": "cryptomanager-get-details",
+                                    "params": {
+                                        "codes": [
+                                            "iasdota"
+                                        ],
+                                        "ASDASD": "AAdAfddsdsddsdsdsddddddddsdsfdsAAA"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6NywiJGd1aWQiOiI1ZmQ2NjAwMi05NjBlLTQ5M2YtODlkMi01ZWFlOTE4YWFlNzkiLCIkb3duZXIiOm51bGwsInVzZXJuYW1lIjoiaGVucnlfcm9tZXJvIiwibGFuZyI6bnVsbCwidGltZXpvbmUiOm51bGwsImN1c3RvbWVyX2lkIjo0LCJ1c2VydHlwZXNfaWQiOm51bGwsIiRoYXNoIjoxNzU2NTk5Nzk3LCJyb2xlcyI6W3sibWV0YSI6ImN1c3RvbWVyIiwibmFtZSI6ImN1c3RvbWVyIiwiX2NyZWF0ZSI6bnVsbCwiX3JlYWQiOm51bGwsIl91cGRhdGUiOm51bGwsIl9kZWxldGUiOm51bGx9XSwiJGdyb3VwRW5hYmxlZCI6dHJ1ZSwiJGdyb3VwIjpudWxsLCJmaXJzdG5hbWUiOiJ0ZXN0IiwibGFzdG5hbWUiOiIxIiwicHJvZmlsZV9waWMiOiJodHRwOi8vNjIuNzIuMjcuMTUxL3N0b3JhZ2UvYjJiNDI0ODItYzZmZS00M2IyLWJkNDctYTliYjE0Y2Y3OTk3L2FwaS9iYmJjMTRjYS1mNzMxLTRkNzUtOGVkNy02NTcxYjBmZTIwZWQvODBhYjgzMzYtMGIyYi00ZWFkLWFhOTQtNzA2ZGUwY2RiODJhL2MyMDFjMmIzLWY5YjUtNDE0Ny1hMWQ5LWRiY2FmNmRiZmE3YS8ucG5nIiwiJG1hcCI6W119LCJtb2QiOiJjdXN0b21lciIsInRlbmFudCI6ImIyYjQyNDgyLWM2ZmUtNDNiMi1iZDQ3LWE5YmIxNGNmNzk5NyIsInNlc3Npb25JZCI6ImZhOTcxOWIyLTczN2MtNGQ0My1iMDY2LTNiYTRhZjEwMDg1ZSIsImlhdCI6MTcwODQ1OTgwNSwiZXhwIjoxNzA5NjU5ODA1fQ.MeNQHz8JF2dcrxrhsLXuxPyv8OFuqXh65dlpG_XaWS8"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/events/read/b2b42482-c6fe-43b2-bd47-a9bb14cf7997": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Read Events",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {}
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MSwiJGd1aWQiOiI1OWY4YjRmYi05NjQxLTQ0OTEtOTlhYS0zZTYyMjllZDczMTMiLCIkb3duZXIiOjAsInVzZXJuYW1lIjoic3lzdGVtIiwibGFuZyI6IiIsInRpbWV6b25lIjoiIiwiY2xpZW50c19pZCI6bnVsbCwiJGhhc2giOiItMjE0NDE3NTQyNCIsInJvbGVzIjpbeyJtZXRhIjoic3lzdGVtIiwibmFtZSI6IlN5c3RlbSIsIl9jcmVhdGUiOjEwLCJfcmVhZCI6MTAsIl91cGRhdGUiOjEwLCJfZGVsZXRlIjoxMH1dLCIkZ3JvdXBFbmFibGVkIjp0cnVlLCIkZ3JvdXAiOm51bGwsIiRtYXAiOltdfSwibW9kIjoiIiwidGVuYW50IjoiY29yZSIsInNlc3Npb25JZCI6IjIyMDAyM2JmLTc5NzQtNDg3Ny04Y2QyLWI2MGQ1YjFhY2ZmMSIsImlhdCI6MTY5MTI3ODAwOSwiZXhwIjoxNjkyNDc4MDA5fQ.u0MZP6DLSNDvKMQchIvXSIAqYcnXRWF5uLt0Lkvx9S0"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/bridge/select/17a3af91-7e7f-43d3-9541-49c761c5af6b/users": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Bridge Select",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "schema": {
+                                        "username": ""
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MTEsIiRndWlkIjoiMGVkMmVjMzctNmQ4NC00YTIyLWI3MjItY2Q4NzYwYWNiODIxIiwiJG93bmVyIjowLCJ1c2VybmFtZSI6ImhlbnJ5NSIsImxhbmciOiIiLCJ0aW1lem9uZSI6IiIsIiRoYXNoIjoiLTExMzAwNjM2ODMiLCJyb2xlcyI6W3sibWV0YSI6ImFkbWlucyIsIm5hbWUiOiJhZG1pbnMiLCJfY3JlYXRlIjpudWxsLCJfcmVhZCI6bnVsbCwiX3VwZGF0ZSI6bnVsbCwiX2RlbGV0ZSI6bnVsbH1dLCIkZ3JvdXBFbmFibGVkIjp0cnVlLCIkZ3JvdXAiOm51bGwsIiRtYXAiOltdfSwibW9kIjoiIiwidGVuYW50IjoiY29yZSIsInNlc3Npb25JZCI6ImY0ZGUyZTc3LTVjYzYtNDk4NS1iYWEwLTQwYmNhZWI5ODIyNSIsImlhdCI6MTY3NTAzMzU0MSwiZXhwIjoxNjc2MjMzNTQxfQ.DDrkzuk9BmhEWY-Y1UbZhM5zMXVQsSTdpiFwyaIBdLI"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/bridge/crud/17a3af91-7e7f-43d3-9541-49c761c5af6b/users": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "Bridge Crud",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "schema": {
+                                        "$id": 1,
+                                        "$guid": "45b12297-3fc4-402b-9b7d-6fb922435676",
+                                        "$owner": 11,
+                                        "$str": "",
+                                        "$createdOn": "2023-02-12T03:43:14.000Z",
+                                        "$updatedOn": null,
+                                        "$creator": 11,
+                                        "$updatedby": null,
+                                        "$chunk": null,
+                                        "$rule": null,
+                                        "$trash": 0,
+                                        "username": "system",
+                                        "$hash": "1464722680"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MTEsIiRndWlkIjoiMGVkMmVjMzctNmQ4NC00YTIyLWI3MjItY2Q4NzYwYWNiODIxIiwiJG93bmVyIjowLCJ1c2VybmFtZSI6ImhlbnJ5NSIsImxhbmciOiIiLCJ0aW1lem9uZSI6IiIsIiRoYXNoIjoiLTExMzAwNjM2ODMiLCJyb2xlcyI6W3sibWV0YSI6ImFkbWlucyIsIm5hbWUiOiJhZG1pbnMiLCJfY3JlYXRlIjpudWxsLCJfcmVhZCI6bnVsbCwiX3VwZGF0ZSI6bnVsbCwiX2RlbGV0ZSI6bnVsbH1dLCIkZ3JvdXBFbmFibGVkIjp0cnVlLCIkZ3JvdXAiOm51bGwsIiRtYXAiOltdfSwibW9kIjoiIiwidGVuYW50IjoiY29yZSIsInNlc3Npb25JZCI6ImY0ZGUyZTc3LTVjYzYtNDk4NS1iYWEwLTQwYmNhZWI5ODIyNSIsImlhdCI6MTY3NTAzMzU0MSwiZXhwIjoxNjc2MjMzNTQxfQ.DDrkzuk9BmhEWY-Y1UbZhM5zMXVQsSTdpiFwyaIBdLI"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/factory/build/entities/b2b42482-c6fe-43b2-bd47-a9bb14cf7997": {
+            "post": {
+                "tags": [
+                    "Factory"
+                ],
+                "summary": "BuildEntities",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MSwiJGd1aWQiOiI1OWY4YjRmYi05NjQxLTQ0OTEtOTlhYS0zZTYyMjllZDczMTMiLCIkb3duZXIiOjAsInVzZXJuYW1lIjoic3lzdGVtIiwibGFuZyI6IiIsInRpbWV6b25lIjoiIiwiY2xpZW50c19pZCI6bnVsbCwiJGhhc2giOjc4NDk1OTQ3Miwicm9sZXMiOlt7Im1ldGEiOiJzeXN0ZW0iLCJuYW1lIjoiU3lzdGVtIiwiX2NyZWF0ZSI6MTAsIl9yZWFkIjoxMCwiX3VwZGF0ZSI6MTAsIl9kZWxldGUiOjEwfV0sIiRncm91cEVuYWJsZWQiOnRydWUsIiRncm91cCI6bnVsbCwiJG1hcCI6W119LCJtb2QiOiJjbGllbnRzIiwidGVuYW50IjoiY29yZSIsInNlc3Npb25JZCI6ImI5NjViMDliLWQxYjktNDEwNy1hNjYyLWI3MDQxYzU5ZTE1YyIsImlhdCI6MTcwMzk5MTA1MSwiZXhwIjoxNzA1MTkxMDUxfQ.MsOhvlUmALilOLlLkovYJJRohpDbgU50FBHf8jn8ENI"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/ftp/upload/{controller}/{recordGuid}/{objectName}/{propertyName}": {
+            "post": {
+                "tags": [
+                    "Ftp"
+                ],
+                "summary": "Upload",
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "File": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "controller",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "recordGuid",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "objectName",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "propertyName",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/select/cryptocurrencies": {
+            "post": {
+                "tags": [
+                    "Api"
+                ],
+                "summary": "Graph",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "moduleExtension": "auto",
+                                    "appendOwner": true,
+                                    "schema": {
+                                        "code": [
+                                            {
+                                                "op": "in",
+                                                "val": [
+                                                    "bitcoin",
+                                                    "staked-ether"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MSwiJGd1aWQiOiJlZGY4MGY5NC00ZjNkLTRjNGQtYTA2MC00OGFmMzYzNWVkODciLCIkb3duZXIiOjEsInVzZXJuYW1lIjoic3lzdGVtIiwibGFuZyI6bnVsbCwidGltZXpvbmUiOm51bGwsIm9wZXJhdG9yc19pZCI6bnVsbCwidXNlcnR5cGVzX2lkIjpudWxsLCIkaGFzaCI6LTg1NDYzMDg0NSwicm9sZXMiOlt7Im1ldGEiOiJzeXN0ZW0iLCJuYW1lIjoiU3lzdGVtIiwiX2NyZWF0ZSI6MTAsIl9yZWFkIjoxMCwiX3VwZGF0ZSI6MTAsIl9kZWxldGUiOjEwfV0sIiRncm91cEVuYWJsZWQiOnRydWUsIiRncm91cCI6bnVsbCwiJG1hcCI6WzEsNDFdfSwibW9kIjoib3BlcmF0b3JzIiwidGVuYW50IjoiYjJiNDI0ODItYzZmZS00M2IyLWJkNDctYTliYjE0Y2Y3OTk3Iiwic2Vzc2lvbklkIjoiZTcxNzkzMjAtZDhhOC00MjUxLWE4YTEtODNhNTcyMGFmODQzIiwiaWF0IjoxNzA1MTYyMTgxLCJleHAiOjE3MDYzNjIxODF9.YNwnVAd7omcFIkUKJ0S2YiG8V72zCWOkPILx3QPnBLA"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/crud/categories": {
+            "post": {
+                "tags": [
+                    "Api"
+                ],
+                "summary": "Import",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "moduleExtension": "auto",
+                                    "returnQuery": true,
+                                    "schema": {
+                                        "name": "test",
+                                        "code": "test"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRndWlkIjoiM2RhMjFjOGYtMDIyZS00NmVlLWEzZGUtZjJiZDEyZGRmZjc1IiwiJGlkIjoxLCIkb3duZXIiOjEsInVzZXJuYW1lIjoic3lzdGVtIiwibGFuZyI6bnVsbCwidGltZXpvbmUiOm51bGwsInBhc3N3b3JkIjoiJDJiJDEwJDN4LndKU2NEbWVETG1naGt2a2hrRGV0UEFwY2ZocDVrRTJqT1lYWlIub1ZLZ3JKWmRDUm9hIiwib3BlcmF0b3JzX2lkIjpudWxsLCIkaGFzaCI6LTE0NjgzNzg5NDAsInJvbGVzIjpbeyJtZXRhIjoic3lzdGVtIiwibmFtZSI6IlN5c3RlbSIsIl9jcmVhdGUiOjEwLCJfcmVhZCI6MTAsIl91cGRhdGUiOjEwLCJfZGVsZXRlIjoxMH1dLCIkZ3JvdXBFbmFibGVkIjpmYWxzZSwiJG1hcCI6WzFdfSwibW9kIjoiIiwidGVuYW50IjoiNjdhNTM1YjktNjI1OC00YjEwLWExZDctZmVjMDM1M2I5ODhhIiwic2Vzc2lvbklkIjoiM2Q2ZDNiYWEtZmMyZi00MmExLWFjZTMtOWYzYjg1NWQ3NWQ5IiwiaWF0IjoxNjkyNzU1MDAzLCJleHAiOjE2OTM5NTUwMDN9.iLYFd88izE68lzFHfXVcFtmvUVEm1NOXktoaKR4DeL8"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/remove/cryptomarketdata": {
+            "post": {
+                "tags": [
+                    "Api"
+                ],
+                "summary": "Remove",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "moduleExtension": "auto",
+                                    "schema": {
+                                        "$createdOn": [
+                                            {
+                                                "op": "lwt",
+                                                "val": "2023-08-21 00:00"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MSwiJGd1aWQiOiIzZGEyMWM4Zi0wMjJlLTQ2ZWUtYTNkZS1mMmJkMTJkZGZmNzUiLCIkb3duZXIiOjEsInVzZXJuYW1lIjoic3lzdGVtIiwibGFuZyI6bnVsbCwidGltZXpvbmUiOm51bGwsIm9wZXJhdG9yc19pZCI6bnVsbCwiJGhhc2giOjE3NDYwMDE1MzEsInJvbGVzIjpbeyJtZXRhIjoic3lzdGVtIiwibmFtZSI6IlN5c3RlbSIsIl9jcmVhdGUiOjEwLCJfcmVhZCI6MTAsIl91cGRhdGUiOjEwLCJfZGVsZXRlIjoxMH1dLCIkZ3JvdXBFbmFibGVkIjpmYWxzZSwiJG1hcCI6WzFdfSwibW9kIjoiIiwidGVuYW50IjoiMjYxMDQ0OGMtNTBhYS00NzI0LWE3YTktMWQ2NGFlMjY4MTVlIiwic2Vzc2lvbklkIjoiY2RiNzRkNjctYWE2My00NzE4LWIzMDQtMjhjYzIzMjZlNmY3IiwiaWF0IjoxNjkzNTI0NDY4LCJleHAiOjE2OTQ3MjQ0Njh9.Lq-LEtptK-futx4wlHquD4i7D7dmqoMwUlGZGk4gzFY"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/set/cryptomarketdata": {
+            "post": {
+                "tags": [
+                    "Api"
+                ],
+                "summary": "Setter",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "moduleExtension": "auto",
+                                    "schema": {
+                                        "$createdOn": [
+                                            {
+                                                "op": "lwt",
+                                                "val": "2023-08-21 00:00"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MSwiJGd1aWQiOiIzZGEyMWM4Zi0wMjJlLTQ2ZWUtYTNkZS1mMmJkMTJkZGZmNzUiLCIkb3duZXIiOjEsInVzZXJuYW1lIjoic3lzdGVtIiwibGFuZyI6bnVsbCwidGltZXpvbmUiOm51bGwsIm9wZXJhdG9yc19pZCI6bnVsbCwiJGhhc2giOjE3NDYwMDE1MzEsInJvbGVzIjpbeyJtZXRhIjoic3lzdGVtIiwibmFtZSI6IlN5c3RlbSIsIl9jcmVhdGUiOjEwLCJfcmVhZCI6MTAsIl91cGRhdGUiOjEwLCJfZGVsZXRlIjoxMH1dLCIkZ3JvdXBFbmFibGVkIjpmYWxzZSwiJG1hcCI6WzFdfSwibW9kIjoiIiwidGVuYW50IjoiMjYxMDQ0OGMtNTBhYS00NzI0LWE3YTktMWQ2NGFlMjY4MTVlIiwic2Vzc2lvbklkIjoiY2RiNzRkNjctYWE2My00NzE4LWIzMDQtMjhjYzIzMjZlNmY3IiwiaWF0IjoxNjkzNTI0NDY4LCJleHAiOjE2OTQ3MjQ0Njh9.Lq-LEtptK-futx4wlHquD4i7D7dmqoMwUlGZGk4gzFY"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/get/cryptodetails": {
+            "post": {
+                "tags": [
+                    "Api"
+                ],
+                "summary": "Getter",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "moduleExtension": "auto",
+                                    "schema": {
+                                        "guid": [
+                                            {
+                                                "op": "equals",
+                                                "val": "465cf20e-280e-4ecb-8763-6d169832f569"
+                                            }
+                                        ],
+                                        "last_clean": ""
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IiRpZCI6MSwiJGd1aWQiOiIzZGEyMWM4Zi0wMjJlLTQ2ZWUtYTNkZS1mMmJkMTJkZGZmNzUiLCIkb3duZXIiOjEsInVzZXJuYW1lIjoic3lzdGVtIiwibGFuZyI6bnVsbCwidGltZXpvbmUiOm51bGwsIm9wZXJhdG9yc19pZCI6bnVsbCwiJGhhc2giOjE3NDYwMDE1MzEsInJvbGVzIjpbeyJtZXRhIjoic3lzdGVtIiwibmFtZSI6IlN5c3RlbSIsIl9jcmVhdGUiOjEwLCJfcmVhZCI6MTAsIl91cGRhdGUiOjEwLCJfZGVsZXRlIjoxMH1dLCIkZ3JvdXBFbmFibGVkIjpmYWxzZSwiJG1hcCI6WzFdfSwibW9kIjoiIiwidGVuYW50IjoiMjYxMDQ0OGMtNTBhYS00NzI0LWE3YTktMWQ2NGFlMjY4MTVlIiwic2Vzc2lvbklkIjoiY2RiNzRkNjctYWE2My00NzE4LWIzMDQtMjhjYzIzMjZlNmY3IiwiaWF0IjoxNjkzNTI0NDY4LCJleHAiOjE2OTQ3MjQ0Njh9.Lq-LEtptK-futx4wlHquD4i7D7dmqoMwUlGZGk4gzFY"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
